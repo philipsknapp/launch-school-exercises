@@ -20,15 +20,16 @@ def sine(length, amplitude, wavelength)
   end  
 end
 
-def circle(int)
+def circle(int, squash = 2.5)
   radius = int / 2
   puts
   (0..int).each do |row|
-    mid_space = Math.sqrt(radius ** 2 - ((row - radius) ** 2))
-    mid_string = '*' + ' ' * (2 * mid_space.to_i) + '*'
-    puts mid_string.center(80)
+    mid_space = Math.sqrt((2 * radius * row) - (row ** 2))
+    mid_string = '*' + ' ' * ((2 * squash * mid_space).to_i) + '*'
+    # squash is a fudge factor adjusting for how printed characters are taller
+    puts mid_string.center((int * squash) + 10) # slight border padding
   end   
 end
 
 
-circle(80)
+circle(30)
