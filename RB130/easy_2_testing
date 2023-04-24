@@ -1,0 +1,9 @@
+assert(value.odd?)
+
+assert_equal('xyz', value.downcase)
+
+assert_nil(value)
+
+assert_empty(list)
+
+assert_includes(list, 'xyz')
